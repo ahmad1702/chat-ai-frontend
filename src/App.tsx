@@ -3,56 +3,25 @@ import {
   RouterProvider,
   LoaderFunction,
   ActionFunction,
+  Routes,
+  Route,
 } from "react-router-dom";
 import NotFoundPage from "./components/NotFoundPage";
-
-interface IRoute {
-  path: string;
-  Element: JSX.Element;
-  loader?: LoaderFunction;
-  action?: ActionFunction;
-  ErrorBoundary?: JSX.Element;
-}
-
-const pages = import.meta.glob("./pages/**/*.tsx", { eager: true });
-
-const routes: IRoute[] = [];
-for (const path of Object.keys(pages)) {
-  const fileName = path.match(/\.\/pages\/(.*)\.tsx$/)?.[1];
-  if (!fileName) {
-    continue;
-  }
-
-  const normalizedPathName = fileName.includes("$")
-    ? fileName.replace("$", ":")
-    : fileName.replace(/\/index/, "");
-
-  routes.push({
-    path: fileName === "index" ? "/" : `/${normalizedPathName.toLowerCase()}`,
-    // @ts-ignore
-    Element: pages[path].default,
-    // @ts-ignore
-    loader: pages[path]?.loader as unknown as LoaderFunction | undefined,
-    // @ts-ignore
-    action: pages[path]?.action as unknown as ActionFunction | undefined,
-    // @ts-ignore
-    ErrorBoundary: pages[path]?.ErrorBoundary as unknown as JSX.Element,
-  });
-}
-
-const router = createBrowserRouter(
-  routes.map(({ Element, ErrorBoundary, ...rest }) => ({
-    ...rest,
-    // @ts-ignore
-    element: <Element />,
-    // @ts-ignore
-    errorElement: ErrorBoundary ? <ErrorBoundary /> : <NotFoundPage />
-    // ...(ErrorBoundary && { errorElement: <ErrorBoundary /> }),
-  }))
-);
+import ChatPage from "./pages";
+import HomePage from "./pages/home";
+import SignInPage from "./pages/signin";
+import SignUpPage from "./pages/signup";
 
 const App = () => {
-  return <RouterProvider router={router} />;
+  return (
+    <Routes>
+      <Route path="/" element={<ChatPage />} />
+      <Route path="/home" element={<HomePage />} />
+      <Route path="/signup" element={<SignUpPage />} />
+      <Route path="/signin" element={<SignInPage />} />
+      <Route path="*" element={<NotFoundPage />} />
+    </Routes>
+  )
 };
 
 export default App;

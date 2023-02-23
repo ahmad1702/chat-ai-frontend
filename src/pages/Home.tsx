@@ -3,9 +3,7 @@ import React from 'react'
 import Hero from '../components/home/Hero'
 import NavBar from '../components/Navbar'
 
-type Props = {}
-
-const Home = (props: Props) => {
+const HomePage = () => {
   return (
     <Box>
         <NavBar />
@@ -14,4 +12,4 @@ const Home = (props: Props) => {
   )
 }
 
-export default Home
+export default HomePage

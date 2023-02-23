@@ -9,7 +9,7 @@ import { useState } from 'react';
 import { Link as RouterLink } from 'react-router-dom'
 import Logo from '../components/Logo';
 
-export default function SignupPage() {
+export default function SignUpPage() {
     const [showPassword, setShowPassword] = useState(false);
 
     return (

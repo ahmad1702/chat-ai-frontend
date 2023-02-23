@@ -45,14 +45,10 @@ export default function Hero() {
                 </Stack>
                 <Flex w={'full'} justifyContent="center">
                     <Image
-                        src="src/assets/undraw/chat-bot.svg"
+                        src="/chat-bot.svg"
                         height={{ sm: '24rem', lg: '28rem' }}
                         mt={{ base: 12, sm: 16 }}
                     />
-                    {/* <HeroIllustration
-                        height={{ sm: '24rem', lg: '28rem' }}
-                        mt={{ base: 12, sm: 16 }}
-                    /> */}
                 </Flex>
             </Stack>
         </Container>

@@ -104,7 +104,7 @@ const ChatInput = ({ onSubmit }: ChatInputProps) => {
     </Box>
   )
 }
-function ChatPage() {
+const ChatPage: React.FC = () => {
   const chatContainerRef = useRef<HTMLDivElement>(null)
   const currentUserName = 'me'
   const [chats, setChats] = useLocalStorageState<Chat[]>('chats', {

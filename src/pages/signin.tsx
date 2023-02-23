@@ -15,7 +15,7 @@ import {
 import { Link as RouterLink } from 'react-router-dom';
 import Logo from '../components/Logo';
 
-export default function LoginPage() {
+export default function SignInPage() {
     return (
         <Flex
             minH={'100vh'}
