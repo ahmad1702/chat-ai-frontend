@@ -1,8 +1,8 @@
-import { Box, Button, Icon, IconButton, Text, Textarea, useColorModeValue } from '@chakra-ui/react'
-import React, { useEffect, useRef, useState } from 'react'
-import NavBar from '../components/Navbar'
+import { Box, Icon, IconButton, Text, Textarea, useColorModeValue } from '@chakra-ui/react'
 import { PaperAirplaneIcon } from '@heroicons/react/24/outline'
+import React, { useEffect, useState } from 'react'
 import useLocalStorageState from 'use-local-storage-state'
+import NavBar from '../components/Navbar'
 import useAnimation from '../hooks/useAnimation'
 
 type Chat = {

@@ -1,25 +1,13 @@
 import {
-    Box,
-    Flex,
-    Text,
-    IconButton,
-    Button,
-    Stack,
-    Collapse,
-    Icon,
-    Link,
-    Popover,
-    PopoverTrigger,
-    PopoverContent,
-    useColorModeValue,
-    useDisclosure,
+    Box, Button, Collapse, Flex, Icon, IconButton, Link,
+    Popover, PopoverContent, PopoverTrigger, Stack, Text, useColorModeValue,
+    useDisclosure
 } from '@chakra-ui/react';
-import Logo from './Logo'
-import DarkModeToggle from './DarkModeToggle';
-import { Link as RouterLink } from 'react-router-dom'
 import { Bars3Icon, ChevronDownIcon, ChevronRightIcon, XMarkIcon } from '@heroicons/react/24/outline';
-import { ReactComponent as GithubIcon } from '../assets/github-mark.svg';
-import { AiFillGithub } from 'react-icons/ai'
+import { AiFillGithub } from 'react-icons/ai';
+import { Link as RouterLink } from 'react-router-dom';
+import DarkModeToggle from './DarkModeToggle';
+import Logo from './Logo';
 
 export default function WithSubnavigation() {
     const { isOpen, onToggle } = useDisclosure();

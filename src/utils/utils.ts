@@ -1,3 +1,7 @@
 import { Link } from "react-router-dom";
 
-export const RouterLink = Link
+/**
+ * To Separate Semantics from ChakraUI Link component.
+ * Router Link will be a react-router link
+ */
+export const RouterLink = Link;
