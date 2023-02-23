@@ -4,6 +4,7 @@ specifiers:
   '@chakra-ui/react': ^2.5.1
   '@emotion/react': ^11.10.6
   '@emotion/styled': ^11.10.6
+  '@formkit/auto-animate': 1.0.0-beta.6
   '@heroicons/react': ^2.0.16
   '@types/react': ^18.0.27
   '@types/react-dom': ^18.0.10
@@ -25,6 +26,7 @@ dependencies:
   '@chakra-ui/react': 2.5.1_xxi5qgxd6ddrb5los77xc5vtpq
   '@emotion/react': 11.10.6_pmekkgnqduwlme35zpnqhenc34
   '@emotion/styled': 11.10.6_oouaibmszuch5k64ms7uxp2aia
+  '@formkit/auto-animate': 1.0.0-beta.6
   '@heroicons/react': 2.0.16_react@18.2.0
   framer-motion: 9.0.7_biqbaboplfbrettd7655fr4n2y
   localforage: 1.10.0
@@ -1630,6 +1632,10 @@ packages:
     os: [win32]
     requiresBuild: true
     optional: true
+
+  /@formkit/auto-animate/1.0.0-beta.6:
+    resolution: {integrity: sha512-PVDhLAlr+B4Xb7e+1wozBUWmXa6BFU8xUPR/W/E+TsQhPS1qkAdAsJ25keEnFrcePSnXHrOsh3tiFbEToOzV9w==}
+    dev: false
 
   /@heroicons/react/2.0.16_react@18.2.0:
     resolution: {integrity: sha512-x89rFxH3SRdYaA+JCXwfe+RkE1SFTo9GcOkZettHer71Y3T7V+ogKmfw5CjTazgS3d0ClJ7p1NA+SP7VQLQcLw==}

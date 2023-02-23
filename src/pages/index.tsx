@@ -3,6 +3,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import NavBar from '../components/Navbar'
 import { PaperAirplaneIcon } from '@heroicons/react/24/outline'
 import useLocalStorageState from 'use-local-storage-state'
+import useAnimation from '../hooks/useAnimation'
 
 type Chat = {
   from: string;
@@ -113,7 +114,7 @@ const ChatInput = ({ onSubmit }: ChatInputProps) => {
   )
 }
 function ChatPage() {
-  const chatContainerRef = useRef<HTMLDivElement>(null)
+  const chatContainerRef = useAnimation<HTMLDivElement>()
   const currentUserName = 'me'
   const [chats, setChats] = useLocalStorageState<Chat[]>('chats', {
     defaultValue: [
