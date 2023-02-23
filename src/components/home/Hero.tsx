@@ -24,9 +24,7 @@ export default function Hero() {
                     </Text>
                 </Heading>
                 <Text color={'gray.500'} maxW={'3xl'}>
-                    Never miss a meeting. Never be late for one too. Keep track of your
-                    meetings and receive smart reminders in appropriate times. Read your
-                    smart “Daily Agenda” every morning.
+                    A friend at the reach of your fingertips, even if you don't have any friends lol
                 </Text>
                 <Stack spacing={6} direction={'row'}>
                     <Button
@@ -45,14 +43,10 @@ export default function Hero() {
                 </Stack>
                 <Flex w={'full'} justifyContent="center">
                     <Image
-                        src="src/assets/undraw/chat-bot.svg"
+                        src="/chat-bot.svg"
                         height={{ sm: '24rem', lg: '28rem' }}
                         mt={{ base: 12, sm: 16 }}
                     />
-                    {/* <HeroIllustration
-                        height={{ sm: '24rem', lg: '28rem' }}
-                        mt={{ base: 12, sm: 16 }}
-                    /> */}
                 </Flex>
             </Stack>
         </Container>
