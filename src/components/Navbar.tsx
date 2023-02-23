@@ -23,6 +23,7 @@ import {
 } from '@chakra-ui/icons';
 import Logo from './Logo'
 import DarkModeToggle from './DarkModeToggle';
+import { Link as RouterLink } from 'react-router-dom'
 
 export default function WithSubnavigation() {
     const { isOpen, onToggle } = useDisclosure();
@@ -53,7 +54,9 @@ export default function WithSubnavigation() {
                     />
                 </Flex>
                 <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}>
-                    <Logo />
+                    <Link as={RouterLink} to="/home" color="brand.400">
+                        <Logo />
+                    </Link>
                     <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
                         <DesktopNav />
                     </Flex>
@@ -67,20 +70,21 @@ export default function WithSubnavigation() {
                 >
                     <DarkModeToggle />
                     <Button
-                        as={'a'}
+                        as={RouterLink}
+                        to="/signin"
                         fontSize={'sm'}
                         fontWeight={400}
-                        href={'#'}>
+                    >
                         Sign In
                     </Button>
                     <Button
-                        as={'a'}
+                        as={RouterLink}
+                        to="/signup"
                         display={{ base: 'none', md: 'inline-flex' }}
                         fontSize={'sm'}
                         fontWeight={600}
                         color={'white'}
                         bg={'brand.400'}
-                        href={'#'}
                         _hover={{
                             bg: 'brand.300',
                         }}>
@@ -227,7 +231,11 @@ const MobileNavItem = ({ label, children, href }: NavItem) => {
                 )}
             </Flex>
 
-            <Collapse in={isOpen} animateOpacity style={{ marginTop: '0!important' }}>
+            <Collapse
+                in={isOpen}
+                animateOpacity
+                style={{ marginTop: '0!important' }}
+            >
                 <Stack
                     mt={2}
                     pl={4}
@@ -275,8 +283,8 @@ const NAV_ITEMS: Array<NavItem> = [
             },
         ],
     },
-    // {
-    //     label: 'Example Route',
-    //     href: '#',
-    // },
+    {
+        label: 'Chat',
+        href: '/',
+    },
 ];

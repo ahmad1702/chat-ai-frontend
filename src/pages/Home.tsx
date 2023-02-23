@@ -1,8 +1,16 @@
+import { Box } from '@chakra-ui/react'
 import React from 'react'
+import Hero from '../components/home/Hero'
+import NavBar from '../components/Navbar'
 
-const Home = () => {
+type Props = {}
+
+const Home = (props: Props) => {
   return (
-    <div>Home</div>
+    <Box>
+        <NavBar />
+        <Hero />
+    </Box>
   )
 }
 
