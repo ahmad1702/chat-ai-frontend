@@ -16,7 +16,7 @@
     "noEmit": true,
     "jsx": "react-jsx",
     // To Add Vite Client Typess
-    "types": ["vite/client"]
+    "types": ["vite/client", "vite-plugin-svgr/client"]
   },
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]

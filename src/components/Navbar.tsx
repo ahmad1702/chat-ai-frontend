@@ -12,18 +12,14 @@ import {
     PopoverTrigger,
     PopoverContent,
     useColorModeValue,
-    useBreakpointValue,
     useDisclosure,
 } from '@chakra-ui/react';
-import {
-    HamburgerIcon,
-    CloseIcon,
-    ChevronDownIcon,
-    ChevronRightIcon,
-} from '@chakra-ui/icons';
 import Logo from './Logo'
 import DarkModeToggle from './DarkModeToggle';
 import { Link as RouterLink } from 'react-router-dom'
+import { Bars3Icon, ChevronDownIcon, ChevronRightIcon, XMarkIcon } from '@heroicons/react/24/outline';
+import { ReactComponent as GithubIcon } from '../assets/github-mark.svg';
+import { AiFillGithub } from 'react-icons/ai'
 
 export default function WithSubnavigation() {
     const { isOpen, onToggle } = useDisclosure();
@@ -47,7 +43,7 @@ export default function WithSubnavigation() {
                     <IconButton
                         onClick={onToggle}
                         icon={
-                            isOpen ? <CloseIcon w={3} h={3} /> : <HamburgerIcon w={5} h={5} />
+                            isOpen ? <Icon w={3} h={3}><XMarkIcon /></Icon> : <Icon w={5} h={5}><Bars3Icon /></Icon>
                         }
                         variant={'ghost'}
                         aria-label={'Toggle Navigation'}
@@ -68,6 +64,16 @@ export default function WithSubnavigation() {
                     direction={'row'}
                     spacing={3}
                 >
+                    <IconButton
+                        // Link to frontend github
+                        as={RouterLink}
+                        to="https://github.com/ahmad1702/chat-ai-frontend"
+                        target="_blank"
+                        // Button Styles
+                        fontSize='20px'
+                        icon={<AiFillGithub />}
+                        aria-label={'github'}
+                    />
                     <DarkModeToggle />
                     <Button
                         as={RouterLink}
@@ -178,6 +184,7 @@ const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
                     align={'center'}
                     flex={1}>
                     <Icon color={'brand.400'} w={5} h={5} as={ChevronRightIcon} />
+                    {/* <Icon color={'brand.400'} w={5} h={5} as={ChevronRightIcon} /> */}
                 </Flex>
             </Stack>
         </Link>

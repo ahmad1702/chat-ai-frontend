@@ -1,4 +1,4 @@
-import { Box, Button, Icon, Text, Textarea, useColorModeValue } from '@chakra-ui/react'
+import { Box, Button, Icon, IconButton, Text, Textarea, useColorModeValue } from '@chakra-ui/react'
 import React, { useEffect, useRef, useState } from 'react'
 import NavBar from '../components/Navbar'
 import { PaperAirplaneIcon } from '@heroicons/react/24/outline'
@@ -97,9 +97,17 @@ const ChatInput = ({ onSubmit }: ChatInputProps) => {
           pr={10}
           onKeyDown={handleKeyDown}
         />
-        <Button colorScheme={'brand'} type="submit" position="absolute" bottom={6} right={7} zIndex={10} size="sm">
-          <Icon as={PaperAirplaneIcon}></Icon>
-        </Button>
+        <IconButton
+          icon={<Icon as={PaperAirplaneIcon} />}
+          colorScheme={'brand'}
+          type="submit"
+          position="absolute"
+          bottom={6}
+          right={7}
+          zIndex={10}
+          size="sm"
+          aria-label={'send chat'}
+        />
       </form>
     </Box>
   )

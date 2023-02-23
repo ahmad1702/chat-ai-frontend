@@ -1,10 +1,11 @@
 import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
 import {
     Box, Button, Flex, FormControl,
-    FormLabel, Heading, HStack, Input,
+    FormLabel, Heading, HStack, Icon, Input,
     InputGroup, InputRightElement, Link, Stack, Text,
     useColorModeValue
 } from '@chakra-ui/react';
+import { EyeIcon, EyeSlashIcon } from '@heroicons/react/24/outline';
 import { useState } from 'react';
 import { Link as RouterLink } from 'react-router-dom'
 import Logo from '../components/Logo';
@@ -64,7 +65,7 @@ export default function SignupPage() {
                                         onClick={() =>
                                             setShowPassword((showPassword) => !showPassword)
                                         }>
-                                        {showPassword ? <ViewIcon /> : <ViewOffIcon />}
+                                        {showPassword ? <Icon as={EyeIcon} /> : <Icon as={EyeSlashIcon} />}
                                     </Button>
                                 </InputRightElement>
                             </InputGroup>
