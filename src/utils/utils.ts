@@ -5,3 +5,7 @@ import { Link } from "react-router-dom";
  * Router Link will be a react-router link
  */
 export const RouterLink = Link;
+
+export const getAPIUrl = () => {
+    return `${window.location.origin}/api/`
+}

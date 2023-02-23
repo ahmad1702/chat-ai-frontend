@@ -2,6 +2,7 @@ import { Box, Icon, IconButton, Text, Textarea, useColorModeValue } from '@chakr
 import { PaperAirplaneIcon } from '@heroicons/react/24/outline'
 import React, { useEffect, useState } from 'react'
 import useLocalStorageState from 'use-local-storage-state'
+import { fetchMLChatResponse } from '../api/chat'
 import NavBar from '../components/Navbar'
 import useAnimation from '../hooks/useAnimation'
 
@@ -135,8 +136,16 @@ function ChatPage() {
     scrollToBottom()
   }, [chats])
 
-  const onChatInputSubmit = (newMessage: string) => {
-    setChats([...chats, { from: currentUserName, content: newMessage }, { from: 'jim', content: newMessage }])
+  const onChatInputSubmit = async (newMessage: string) => {
+    setChats([...chats, { from: currentUserName, content: newMessage }])
+    try {
+      const res = await fetchMLChatResponse(newMessage)
+      if (res && typeof res === 'string') {
+        setChats([...chats, { from: 'jim', content: newMessage }])
+      }
+    } catch (error) {
+      console.error(error)
+    }
   }
   return (
     <Box bg="blackAlpha.50" height={'100vh'} display="flex" flexDirection="column" >
