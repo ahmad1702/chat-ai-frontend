@@ -1,13 +1,17 @@
+import { API_URL } from "../utils/constants";
 import { getAPIUrl } from "../utils/utils";
 
 export const fetchMLChatResponse = async (inputMessage: string) => {
   let response;
-  const url = getAPIUrl() + 'chat/';
-  console.log('url:', url)
+  const url = API_URL + "/chat";
   let output: string | null = null;
 
   try {
     response = await fetch(url, {
+      headers: {
+        'Content-Type': 'application/json'
+        // 'Content-Type': 'application/x-www-form-urlencoded',
+      },
       method: "POST",
       body: JSON.stringify({ message: inputMessage }),
     });

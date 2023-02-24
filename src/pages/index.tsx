@@ -5,6 +5,7 @@ import useLocalStorageState from 'use-local-storage-state'
 import { fetchMLChatResponse } from '../api/chat'
 import NavBar from '../components/Navbar'
 import useAnimation from '../hooks/useAnimation'
+import { API_URL } from '../utils/constants'
 
 type Chat = {
   from: string;
@@ -137,15 +138,18 @@ function ChatPage() {
   }, [chats])
 
   const onChatInputSubmit = async (newMessage: string) => {
-    setChats([...chats, { from: currentUserName, content: newMessage }])
+    const newChats = [{ from: currentUserName, content: newMessage }]
     try {
       const res = await fetchMLChatResponse(newMessage)
       if (res && typeof res === 'string') {
-        setChats([...chats, { from: 'jim', content: newMessage }])
+        newChats.push({ from: 'jim', content: res })
+      } else {
+
       }
     } catch (error) {
       console.error(error)
     }
+    setChats([...chats, ...newChats])
   }
   return (
     <Box bg="blackAlpha.50" height={'100vh'} display="flex" flexDirection="column" >
